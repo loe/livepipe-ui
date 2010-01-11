@@ -54,7 +54,7 @@ Control.Tabs = Class.create({
             this.setActiveTab(this.options.defaultTab); }
         var targets = this.options.targetRegExp.exec(window.location);
         if(targets && targets[1]){
-            targets[1].split(',').each(function(target){
+            unescape(targets[1]).split(',').each(function(target){
                 this.setActiveTab(this.links.find(function(link){
                     return link.key == target;
                 }));
